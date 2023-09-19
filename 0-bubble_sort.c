@@ -3,34 +3,29 @@
 /**
  *bubble_sort - function that sorts an array of integers in ascending order
  *using the Bubble sort algorithm
- *
  * @array: The array to be sorted
  * @size: Number of elements in array
  * Return: void
  */
-*/
+void bubble_sort(int *array, size_t size)
+{
+	int temp;
+	size_t i, j;
 
 
+	for (i = 0; i < size - 1; i++)
+	{
 
-void bubble_sort(int *array, size_t size) {
-  if (!array)
-    return;
+		for (j = 0; j < size - 1; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
 
-  int temp_swap;
-  int swapped = 1; 
-
-  for (int j = 1; swapped; j++) {
-    swapped = 0; 
-
-    for (size_t i = 0; i < size - j; i++) {
-      if (array[i] > array[i + 1]) {
-	
-	temp_swap = array[i];
-	array[i] = array[i + 1];
-	array[i + 1] = temp_swap;
-	swapped = 1; 
-	print_array(array, size);
-      }
-    }
-  }
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+				print_array(array, size);
+			}
+		}
+	}
 }
